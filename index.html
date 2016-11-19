@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="./css/index.css">
     <script type="text/javascript" src="./js/jquery-3.1.1.min.js" ></script>
     <script type="text/javascript" src="./js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="./js/underscore-min.js" ></script>
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 sidebar">
-            <div class="overview">第X轮复活赛
-                <button>返回上一轮</button>
-                <button>进入下一轮</button>
+            <div class="overview">第<span id="round-count"></span>轮
+                <div>复活赛</div>
+                <button class="overview-button" id="back-button">返回上一轮</button>
+                <button class="overview-button" id="next-button">进入下一轮</button>
             </div>
-            <div class="description">LOGO文字可编辑</div>
+            <div class="description">LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编辑LOGO文字可编</div>
         </div>
         <div class="col-lg-10">
             <div class="current-players-view">
@@ -29,9 +31,9 @@
             </div>
             <div class="container-fluid group-view">
                 <div class="row">
-                    <div class="col-lg-4 group-col-left"></div>
-                    <div class="col-lg-4 group-col-middle"></div>
-                    <div class="col-lg-4 group-col-right"></div>
+                    <div class="col-lg-4 group-col group-col-left"></div>
+                    <div class="col-lg-4 group-col group-col-middle"></div>
+                    <div class="col-lg-4 group-col group-col-right"></div>
                 </div>
             </div>
         </div>

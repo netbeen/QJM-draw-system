@@ -19,11 +19,21 @@ body{
 }
 
 .overview {
-    height: 35%;
+    height: 240px;
+    font-size: 70px;
+}
+
+.overview-button{
+    font-size: 17px;
+    margin-left: 4px;
+    float: left;
 }
 
 .description{
-    height: 65%;
+    /*padding-top: 240px;*/
+    /*top: 0;*/
+    /*position: absolute;*/
+    /*height:100%;*/
 }
 
 .current-players-view {
