@@ -26,10 +26,6 @@ class StateManager {
 }
 
 class DrawManager {
-  init() {
-
-  }
-
   draw() {
     let allPlayerIdsCopy = allPlayerIds.concat();
     let currentGroup = [];
@@ -62,6 +58,31 @@ class InteractiveManager {
         $('.ids-panel-down').append('<span class="badge id-panel-elem">'+allPlayerIds[i]+'</span>');
       }
     }
+
+    if(groups.length === 0){
+      console.log('groups为空');
+    }
+    for(let i = 0; i < groups.length; i++){
+      let idsElem = ''
+      for(let j = 0; j < groups[i].length; j++){
+        idsElem += '<span class="badge id-group-elem">'+groups[i][j]+'</span>'
+      }
+      let elem = '<div class="group-elem">第'+(i+1)+'组<br/>'+idsElem+'</div>';
+      switch(i%3){
+        case 0:
+          $('.group-col-left').append(elem);
+          break;
+        case 1:
+          $('.group-col-middle').append(elem);
+          break;
+        case 2:
+          $('.group-col-right').append(elem);
+          break;
+        default:
+          break;
+      }
+    }
+
   }
 
   selected() {

@@ -47,5 +47,22 @@ body{
 }
 
 .group-view {
-    background-color: #afd9ee;
+    padding-top: 120px;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+    height:100%;
+}
+
+.group-view .group-elem {
+    width: 100%;
+    padding: 0 0 0 0;
+    font-size: 72px;
+    border: solid 1px;
+    margin: 15px 0 30px 0;
+}
+
+.group-view .id-group-elem {
+    font-size: 65px;
+    margin: 0 10px 0 10px;
 }
