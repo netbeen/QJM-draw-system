@@ -30,9 +30,7 @@ class DrawManager {
     let allPlayerIdsCopy = allPlayerIds.concat();
     let currentGroup = [];
     while(allPlayerIdsCopy.length !== 0){
-      console.log('剩余长度:',allPlayerIdsCopy.length);
       let randomIndex = parseInt((Math.random()*10000000))%allPlayerIdsCopy.length;
-      console.log(randomIndex);
       if(currentGroup.length === 3){
         groups.push(currentGroup.concat());
         currentGroup = [allPlayerIdsCopy[randomIndex]];
@@ -42,33 +40,32 @@ class DrawManager {
       allPlayerIdsCopy.splice(randomIndex,1);
     }
     groups.push(currentGroup.concat());
-    console.log(groups);
   }
 }
 
 class InteractiveManager {
   render() {
-    if(allPlayerIds.length === 0){
+    if (allPlayerIds.length === 0) {
       console.log('allPlayerIds为空');
     }
-    for(let i = 0; i < allPlayerIds.length; i++){
-      if(i%2===0){
-        $('.ids-panel-up').append('<span class="badge id-panel-elem">'+allPlayerIds[i]+'</span>');
-      }else{
-        $('.ids-panel-down').append('<span class="badge id-panel-elem">'+allPlayerIds[i]+'</span>');
+    for (let i = 0; i < allPlayerIds.length; i++) {
+      if (i % 2 === 0) {
+        $('.ids-panel-up').append('<span class="badge id-panel-elem">' + allPlayerIds[i] + '</span>');
+      } else {
+        $('.ids-panel-down').append('<span class="badge id-panel-elem">' + allPlayerIds[i] + '</span>');
       }
     }
 
-    if(groups.length === 0){
+    if (groups.length === 0) {
       console.log('groups为空');
     }
-    for(let i = 0; i < groups.length; i++){
+    for (let i = 0; i < groups.length; i++) {
       let idsElem = ''
-      for(let j = 0; j < groups[i].length; j++){
-        idsElem += '<span class="badge id-group-elem">'+groups[i][j]+'</span>'
+      for (let j = 0; j < groups[i].length; j++) {
+        idsElem += '<div class="badge id-group-elem">' + groups[i][j] + '</div>'
       }
-      let elem = '<div class="group-elem">第'+(i+1)+'组<br/>'+idsElem+'</div>';
-      switch(i%3){
+      let elem = '<div class="group-elem">第' + (i + 1) + '组<br/>' + idsElem + '</div>';
+      switch (i % 3) {
         case 0:
           $('.group-col-left').append(elem);
           break;
@@ -82,7 +79,6 @@ class InteractiveManager {
           break;
       }
     }
-
   }
 
   selected() {
@@ -113,6 +109,10 @@ class InteractiveManager {
 
     $('#initModal').modal('hide');
     interactiveManager.render();
+
+    $('.id-group-elem').on('click', (e) => {
+      $(e.target).toggleClass('win');
+    });
   });
 
   $('#initModal').modal('show');
