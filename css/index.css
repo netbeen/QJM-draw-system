@@ -1,0 +1,51 @@
+body{
+}
+
+.container-fluid{
+    height:100%;
+}
+
+.container-fluid .row{
+    height:100%;
+}
+
+.col-lg-10 {
+    height: 100%;
+}
+
+.container-fluid .row .sidebar{
+    background-color: #8a6d3b;
+    height:100%;
+}
+
+.overview {
+    height: 35%;
+}
+
+.description{
+    height: 65%;
+}
+
+.current-players-view {
+    height: 120px;
+}
+
+.current-players-view .title {
+    font-size: 40px;
+    float: left;
+}
+
+.current-players-view .ids-panel{
+    overflow: hidden;
+    height: 58px;
+    overflow-wrap: normal;
+}
+
+.current-players-view .id-panel-elem{
+    font-size: 45px;
+    margin: 4px 0 0 6px;
+}
+
+.group-view {
+    background-color: #afd9ee;
+}
