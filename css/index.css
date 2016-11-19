@@ -20,13 +20,17 @@ body{
 
 .overview {
     height: 240px;
-    font-size: 70px;
+    font-size: 65px;
 }
 
 .overview-button{
-    font-size: 17px;
+    font-size: 15px;
     margin-left: 4px;
     float: left;
+}
+
+#isLosersBracket-tip.invisible{
+    visibility: hidden;
 }
 
 .description{

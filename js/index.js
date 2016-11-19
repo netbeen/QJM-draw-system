@@ -143,6 +143,11 @@ class InteractiveManager {
     console.log('winPlayerIds',winPlayerIds);
     console.log('lastRoundWinPlayersIds',lastRoundWinPlayersIds);
     console.log('是否败者组',isLosersBracket);
+    if(isLosersBracket){
+      $('#isLosersBracket-tip').removeClass('invisible');
+    }else{
+      $('#isLosersBracket-tip').addClass('invisible');
+    }
     $('.ids-panel').children().remove();
     $('.group-col').children().remove();
     $('#round-count').html(currentStateIndex+2);
