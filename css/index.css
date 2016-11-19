@@ -62,6 +62,29 @@ body{
     margin: 15px 0 30px 0;
 }
 
+.group-view .group-elem .status{
+    color: white;
+    display: none;
+}
+
+.group-view .group-elem.ing .status{
+    color: white;
+    display: block;
+}
+
+.group-view .group-elem.ing {
+    background-color: #f0ad4e;
+}
+
+.group-view .group-elem.ready {
+    background-color: #9d9d9d;
+}
+
+.group-view .group-elem.ready .status{
+    color: white;
+    display: block;
+}
+
 .group-view .id-group-elem {
     font-size: 59px;
     margin: 0 1px 0 1px;

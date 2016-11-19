@@ -44,6 +44,42 @@ class DrawManager {
 }
 
 class InteractiveManager {
+  bindEvent() {
+    $('.id-group-elem').on('click', (e) => {
+      e.stopPropagation();
+      $(e.target).toggleClass('win');
+    });
+
+    $('.group-elem').on('click', (e) => {
+      e.stopPropagation();
+      $('.group-elem').removeClass('ing');
+      $('.group-elem').removeClass('ready');
+      $(e.target).addClass('ing');
+      $(e.target).find('.status').html('ING');
+      let currentGroupIndex = (e.target.attributes.id.value+"").split('-')[2];
+      let nextGroupIndex = currentGroupIndex + 1;
+      let colIndex;
+      if(nextGroupIndex <= groups.length){
+        switch((nextGroupIndex-1)%3){
+          case 0:
+            colIndex = (nextGroupIndex-1)%3;
+            $('.group-col-left').children().eq(colIndex).addClass('ready');
+            break;
+          case 1:
+            colIndex = (nextGroupIndex-2)%3;
+            $('.group-col-middle').children().eq(colIndex).addClass('ready');
+            break;
+          case 2:
+            colIndex = (nextGroupIndex-3)%3;
+            $('.group-col-right').children().eq(colIndex).addClass('ready');
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  }
+
   render() {
     if (allPlayerIds.length === 0) {
       console.log('allPlayerIds为空');
@@ -64,7 +100,7 @@ class InteractiveManager {
       for (let j = 0; j < groups[i].length; j++) {
         idsElem += '<div class="badge id-group-elem">' + groups[i][j] + '</div>'
       }
-      let elem = '<div class="group-elem">第' + (i + 1) + '组<br/>' + idsElem + '</div>';
+      let elem = '<div class="group-elem" id="group-elem-'+(i + 1)+'">第' + (i + 1) + '组<div></div><span class="status"></span>' + idsElem + '</div>';
       switch (i % 3) {
         case 0:
           $('.group-col-left').append(elem);
@@ -79,6 +115,7 @@ class InteractiveManager {
           break;
       }
     }
+    this.bindEvent();
   }
 
   selected() {
@@ -110,9 +147,7 @@ class InteractiveManager {
     $('#initModal').modal('hide');
     interactiveManager.render();
 
-    $('.id-group-elem').on('click', (e) => {
-      $(e.target).toggleClass('win');
-    });
+
   });
 
   $('#initModal').modal('show');
