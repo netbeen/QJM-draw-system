@@ -78,7 +78,8 @@ body{
 
 .group-view .group-elem .status{
     color: white;
-    display: none;
+    display: block;
+    height: 102px;
 }
 
 .group-view .group-elem.ing .status{
