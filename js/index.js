@@ -150,7 +150,7 @@ class InteractiveManager {
     }
     $('.ids-panel').children().remove();
     $('.group-col').children().remove();
-    $('#round-count').html(currentStateIndex+2);
+    $('#round-count').html(Math.ceil((currentStateIndex+2)/2));
     if (allPlayerIds.length === 0) {
       console.log('错误：allPlayerIds为空');
     }
