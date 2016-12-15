@@ -14,7 +14,6 @@ body{
 }
 
 .container-fluid .row .sidebar{
-    background-color: #8a6d3b;
     height:100%;
 }
 
@@ -33,11 +32,13 @@ body{
     visibility: hidden;
 }
 
+.description img{
+    width: 220px;
+}
+
 .description{
-    /*padding-top: 240px;*/
-    /*top: 0;*/
-    /*position: absolute;*/
-    /*height:100%;*/
+    font-size: 25px;
+    text-align: center;
 }
 
 .current-players-view {
@@ -79,7 +80,8 @@ body{
 .group-view .group-elem .status{
     color: white;
     display: block;
-    height: 102px;
+    height: 30px;
+    font-size: 35px;
 }
 
 .group-view .group-elem.ing .status{
